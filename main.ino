@@ -19,6 +19,7 @@ void setup()
   Serial.begin(115200);
   nss.begin(19200);
 
+  // Allows monitoring / debug when computer is plugged in with USB
   isbd.attachConsole(Serial);
   isbd.attachDiags(Serial);
 
