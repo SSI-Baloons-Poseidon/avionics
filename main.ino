@@ -9,8 +9,8 @@
 #include <IridiumSBD.h>
 #include <SoftwareSerial.h>
 
-SoftwareSerial nss(18, 19);
-IridiumSBD isbd(nss, 10);
+SoftwareSerial nss(18, 19); // RockBLOCK serial port on 18/19
+IridiumSBD isbd(nss, 10); // RockBLOCK SLEEP pin on 10
 
 void setup()
 {
@@ -22,7 +22,7 @@ void setup()
   isbd.attachConsole(Serial);
   isbd.attachDiags(Serial);
 
-  isbd.begin();
+  isbd.begin(); // Wake up the 9602 and prepare it for communications.
 
   isbd.setPowerProfile(1);
 
