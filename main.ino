@@ -41,6 +41,9 @@ void setup()
   uint8_t buffer[200] = 
   { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
   size_t bufferSize = sizeof(buffer);
+
+  // First 2 params are the message to send and its length
+  // Second 2 params are the variable to receive the message and the variable length
   err = isbd.sendReceiveSBDBinary(buffer, 20, buffer, bufferSize);
   if (err != 0)
   {
