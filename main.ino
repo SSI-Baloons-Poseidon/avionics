@@ -9,7 +9,7 @@
 #include <IridiumSBD.h>
 #include <SoftwareSerial.h>
 
-SoftwareSerial nss(18, 19); // RockBLOCK serial port on 18/19
+SoftwareSerial nss(16, 17); // RockBLOCK serial port on 16/17
 IridiumSBD isbd(nss, 10); // RockBLOCK SLEEP pin on 10
 
 void setup()
