@@ -29,6 +29,7 @@ void setup()
   isbd.attachDiags(Serial);
   Serial.println("Beginning...");
   isbd.begin(); // Wake up the 9602 and prepare it for communications.
+  Serial.println(isbd.isAsleep());
 
   isbd.setPowerProfile(0);
 
@@ -38,6 +39,9 @@ void setup()
   {
     Serial.print("SignalQuality failed: error ");
     Serial.println(err);
+    if(err == 10) {
+      Serial.println("RockBlocked! The RockBlock is probably off...");
+    }
     return;
   }
 
