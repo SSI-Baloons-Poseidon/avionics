@@ -31,7 +31,7 @@ void setup()
   isbd.begin(); // Wake up the 9602 and prepare it for communications.
   Serial.println(isbd.isAsleep());
 
-  isbd.setPowerProfile(0);
+  isbd.setPowerProfile(0); // "high-current" / normal applications
 
   Serial.println("About to get SignalQuality...");
   int err = isbd.getSignalQuality(signalQuality);
